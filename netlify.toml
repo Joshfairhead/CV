@@ -1,6 +1,12 @@
 [build]
   publish = "public"
-  command = "zola build"
+  command = "bash build.sh"
 
 [build.environment]
+  ZOLA_VERSION = "0.20.0"
+
+[context.deploy-preview]
+  command = "bash build.sh"
+
+[context.deploy-preview.environment]
   ZOLA_VERSION = "0.20.0"
