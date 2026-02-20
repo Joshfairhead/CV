@@ -1,0 +1,14 @@
+# Build output
+public/
+
+# Zola binary
+zola
+
+# Video files
+*.AVI
+*.avi
+*.mp4
+*.mov
+
+# OS files
+.DS_Store

@@ -1,0 +1,48 @@
+// =============================================================================
+// Navigation
+// =============================================================================
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-3 0;
+    margin-bottom: $space-4;
+}
+
+.nav__brand {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $text-primary;
+    letter-spacing: $letter-spacing-wide;
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.nav__links {
+    display: flex;
+    gap: $space-4;
+}
+
+.nav__link {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $text-muted;
+
+    &:hover {
+        color: $accent;
+    }
+
+    &--active {
+        color: $accent;
+    }
+}
+
+// Hide nav on print
+@media print {
+    .nav {
+        display: none;
+    }
+}

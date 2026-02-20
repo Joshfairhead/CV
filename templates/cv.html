@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh Fairhead - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.25;
+            color: #1e293b;
+            max-width: 8.27in;
+            margin: 0 auto;
+            padding: 0.25in 0.5in;
+            background: white;
+            font-size: 0.8rem;
+        }
+
+        @page {
+            margin: 0;
+            size: A4;
+        }
+
+        @media print {
+            html, body {
+                height: auto !important;
+                overflow: visible !important;
+            }
+
+            body {
+                font-size: 0.75rem !important;
+                line-height: 1.2 !important;
+                padding: 0.2in 0.5in !important;
+                max-width: none !important;
+                margin: 0 !important;
+            }
+
+            .header {
+                margin-bottom: 0.5rem !important;
+                padding-bottom: 0.3rem !important;
+            }
+
+            .section {
+                margin-bottom: 0.4rem !important;
+            }
+
+            .section-title {
+                margin-bottom: 0.3rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            .experience-item {
+                margin-bottom: 0.4rem !important;
+                padding-left: 0.8rem !important;
+            }
+
+            .description {
+                font-size: 0.7rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .period {
+                font-size: 0.65rem !important;
+                padding: 0.08rem 0.3rem !important;
+            }
+
+            .role-title {
+                font-size: 0.85rem !important;
+            }
+
+            .company {
+                font-size: 0.75rem !important;
+            }
+
+            .contact {
+                font-size: 0.6rem !important;
+            }
+
+            .skills-list, .degree-list {
+                font-size: 0.7rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .name {
+                font-size: 1.6rem !important;
+            }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.7rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #1e40af;
+        }
+
+        .contact-section {
+            flex-shrink: 0;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            color: #1e293b;
+            text-decoration: none;
+            display: block;
+        }
+
+        .name:hover {
+            color: #1e40af;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: max-content 1fr max-content 1fr;
+            grid-template-rows: auto auto;
+            gap: 0.25rem;
+            font-size: 0.65rem;
+            align-items: baseline;
+        }
+
+        .contact-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            color: #475569;
+        }
+
+        .contact-item {
+            display: contents;
+        }
+
+        .section {
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 0.4rem;
+            color: #1e40af;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 0.15rem;
+        }
+
+        .experience-item {
+            margin-bottom: 0.65rem;
+            border-left: 3px solid #1e40af;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.3rem;
+            width: 6px;
+            height: 6px;
+            background: #1e40af;
+            border-radius: 50%;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+            gap: 1rem;
+        }
+
+        .role-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+
+        .company {
+            color: #1e40af;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .period {
+            font-size: 0.7rem;
+            color: #64748b;
+            font-weight: 600;
+            background: #f1f5f9;
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+
+        .description {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            color: #334155;
+        }
+
+        .two-column-section {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .two-column-section .section {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .skills-category {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category-title {
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+            color: #1e293b;
+        }
+
+        .skills-list {
+            font-size: 0.75rem;
+            color: #64748b;
+            line-height: 1.3;
+        }
+
+        .education-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .institution {
+            font-weight: 700;
+            color: #1e40af;
+            font-size: 0.85rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .degree-list {
+            font-size: 0.75rem;
+            color: #64748b;
+            line-height: 1.3;
+        }
+
+        .achievements .description p {
+            margin-bottom: 0.2rem;
+            font-size: 0.75rem;
+        }
+
+        .achievements .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .professional-summary .description {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name-section">
+            <a href="{{ get_url(path='/') }}" class="name">Josh Fairhead</a>
+        </div>
+        <div class="contact-section">
+            <div class="contact">
+                <div class="contact-item">
+                    <span class="contact-label">LOC</span>
+                    <span class="contact-value">UK</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">WEB</span>
+                    <span class="contact-value web-value">&nbsp;&nbsp;www.joshafairhead.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">TEL</span>
+                    <span class="contact-value">07979061332</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">MAIL</span>
+                    <span class="contact-value mail-value">josh@joshafairhead.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section professional-summary" style="margin-top: 1rem;">
+        <div class="section-title">Professional Summary</div>
+        <div class="description">
+            <p>Programme manager and governance coordinator with 7+ years leading cross-functional initiatives in fast-moving environments. Combines qualitative systems thinking with hands-on execution.</p>
+            <p>• Core member of hypergrowth startup (10x in year one), shipping product to thousands of users</p>
+            <p>• Coordinated hackathon teams achieving 60% win rate at world's largest blockchain hackathon</p>
+            <p>• Awarded "Best Multidisciplinary Approach" — Odyssey Momentum SSI track (Dutch Blockchain Coalition)</p>
+            <p>• Facilitated governance for 25+ person distributed stakeholder groups across validators, developers, and community</p>
+        </div>
+    </div>
+
+    <div class="section" style="margin-top: 1.5rem;">
+        <div class="section-title">Experience</div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">AI &amp; Knowledge Systems Consultant</div>
+                    <div class="company">Research &amp; Development</div>
+                </div>
+                <div class="period">2023 – Present</div>
+            </div>
+            <div class="description">
+                <p>Consulting on knowledge graph architecture and neurosymbolic AI for technical clients. Built semantic API and ontology for knowledge management system. Facilitated Qualitative Systems Thinking programme at H3uni.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">Ledger Governance Coordinator</div>
+                    <div class="company">Regen Foundation</div>
+                </div>
+                <div class="period">2021 – 2022</div>
+            </div>
+            <div class="description">
+                <p>Coordinated biweekly governance meetings with 25+ participants across delegators, validators, and developers. Onboarded land steward cohorts to blockchain-based endowment funding mechanisms.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">Identity Systems Consultant</div>
+                    <div class="company">Self Sovereign Identity &amp; Blockchain</div>
+                </div>
+                <div class="period">2020 – 2021</div>
+            </div>
+            <div class="description">
+                <p>Technical advisory on blockchain architecture and identity protocols for Dutch Blockchain Coalition and Akasha Foundation. Designed proof-of-uniqueness system using passport verification for decentralized identity — awarded "Best Multidisciplinary Approach" at Odyssey Momentum.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">Community &amp; Partnerships Lead</div>
+                    <div class="company">Commons Stack / Liminal Village</div>
+                </div>
+                <div class="period">2019 – 2020</div>
+            </div>
+            <div class="description">
+                <p>Launched Commons Stack alongside Giveth, leading community management and cross-team delivery. Developed organizational narrative grounded in Ostrom's commons governance frameworks. Incubated hackalong community at Liminal Village, coordinating hackathon teams to 60% win rate at Odyssey and seeding identity systems work that led to Momentum award.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">Product Manager</div>
+                    <div class="company">Pillar Project, London UK</div>
+                </div>
+                <div class="period">2017 – 2018</div>
+            </div>
+            <div class="description">
+                <p>Led product management for cryptocurrency wallet from zero to thousands of users. Organized 600-person unconference event. Core team member through 10x growth (6→60) in year one. Shipped across distributed identity, key management, encrypted messaging, and crypto-economic systems.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="role-header">
+                <div class="role-info">
+                    <div class="role-title">Tech Management &amp; Events Production</div>
+                    <div class="company">Freelance, London UK</div>
+                </div>
+                <div class="period">2014 – 2017</div>
+            </div>
+            <div class="description">
+                <p>Supplied tech management and events production to many of London's best known venues including Nightjar, Oriole, Mber, Cargo, and eggLDN. Equipment supply, install, and operators for lighting, sound, and media servers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="two-column-section" style="margin-top: 1.5rem;">
+        <div class="section">
+            <div class="section-title">Education</div>
+
+            <div class="education-item">
+                <div class="institution">University of West London (2011 – 2013)</div>
+                <div class="degree-list">
+                    MA Audio Technology • BA Music Technology
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="institution">H3Uni.org (2020 – 2025)</div>
+                <div class="degree-list">
+                    Qualitative Systems Thinking • Facilitating Transformative Journeys • Art of Creative Collaboration • Enneagram as Transformational System (VSM)
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="institution">Blue Dot Impact (2025)</div>
+                <div class="degree-list">
+                    Future of AI
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="institution">Capital Institute (2025)</div>
+                <div class="degree-list">
+                    Investment for a Regenerative Economy
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="institution">Capra Course (2020 – 2021)</div>
+                <div class="degree-list">
+                    Systems View of Life
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Skills</div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Programme &amp; Coordination</div>
+                <div class="skills-list">
+                    Roadmap Planning • Cross-functional Coordination • Stakeholder Management • OKRs • Process Design • Technical Writing
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Leadership &amp; Facilitation</div>
+                <div class="skills-list">
+                    Distributed Team Leadership • Multi-stakeholder Governance • Workshop Facilitation • Event Production • Workshop Design
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Technical &amp; Research</div>
+                <div class="skills-list">
+                    Knowledge Graphs • General Systematics • Semantic Systems • Category Theory • Rust
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="skills-category-title">Tools</div>
+                <div class="skills-list">
+                    Git • GitHub • VS Code • Cursor • Claude Code • MCP • Obsidian • Airtable • Zapier • Slack • Discord • Miro • Figma • Google Workspace • Pro Tools • Avolites
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

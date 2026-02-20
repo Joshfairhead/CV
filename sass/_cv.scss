@@ -1,0 +1,241 @@
+// =============================================================================
+// CV Page Styles - Matching original HTML exactly for 1-page print
+// =============================================================================
+
+.cv {
+    max-width: 8.27in;
+    margin: 0 auto;
+    padding: 0.25in 0.5in;
+    background: white;
+    font-size: 0.8rem;
+    line-height: 1.25;
+}
+
+// Header
+.cv__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #1e40af;
+}
+
+.cv__name-link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover .cv__name {
+        color: #1e40af;
+    }
+}
+
+.cv__name {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #1e293b;
+    transition: color 0.15s ease;
+}
+
+.cv__contact-section {
+    flex-shrink: 0;
+}
+
+// Contact grid - exact match to original
+.cv__contact {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.25rem;
+    font-size: 0.65rem;
+    align-items: baseline;
+}
+
+.cv__contact-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+.cv__contact-value {
+    color: #475569;
+}
+
+// Sections
+.cv__section {
+    margin-bottom: 0.8rem;
+}
+
+.cv__section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.4rem;
+    color: #1e40af;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 0.15rem;
+}
+
+// Summary section
+.cv__summary {
+    margin-top: 1rem;
+
+    .cv__description {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        margin-bottom: 0.4rem;
+    }
+}
+
+// Experience section
+.cv__section--experience {
+    margin-top: 1.5rem;
+}
+
+// Experience items
+.cv__experience-item {
+    margin-bottom: 0.65rem;
+    border-left: 3px solid #1e40af;
+    padding-left: 0.8rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 0.3rem;
+        width: 6px;
+        height: 6px;
+        background: #1e40af;
+        border-radius: 50%;
+    }
+}
+
+.cv__role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.25rem;
+    gap: 1rem;
+}
+
+.cv__role-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+
+.cv__company {
+    color: #1e40af;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.cv__period {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 600;
+    background: #f1f5f9;
+    padding: 0.1rem 0.4rem;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.cv__description {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    color: #334155;
+
+    p {
+        margin-bottom: 0.2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Two column section (Education + Skills)
+.cv__two-column {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+
+    > .cv__section {
+        flex: 1;
+        margin-bottom: 0;
+    }
+}
+
+// Education
+.cv__education-item {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cv__institution {
+    font-weight: 700;
+    color: #1e40af;
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.cv__degrees {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+// Skills
+.cv__skills-category {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cv__skills-title {
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    color: #1e293b;
+}
+
+.cv__skills-list {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+// Responsive - only for screen, NOT for print
+@media screen and (max-width: 700px) {
+    .cv__header {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .cv__contact {
+        grid-template-columns: max-content 1fr;
+    }
+
+    .cv__two-column {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cv__role-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

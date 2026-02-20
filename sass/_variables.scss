@@ -1,0 +1,77 @@
+// =============================================================================
+// Design Tokens - CV Site
+// =============================================================================
+
+// Colors (matching existing CV)
+$white: #FFFFFF;
+$off-white: #fafafa;
+$slate-50: #f8fafc;
+$slate-100: #f1f5f9;
+$slate-200: #e2e8f0;
+$slate-300: #cbd5e1;
+$slate-400: #94a3b8;
+$slate-500: #64748b;
+$slate-600: #475569;
+$slate-700: #334155;
+$slate-800: #1e293b;
+
+$blue-700: #1d4ed8;
+$blue-800: #1e40af;
+
+// Semantic colors
+$bg-primary: $white;
+$bg-card: $off-white;
+$text-primary: $slate-800;
+$text-secondary: $slate-700;
+$text-muted: $slate-500;
+$accent: $blue-800;
+$border-light: $slate-300;
+$border-card: $slate-200;
+
+// Typography
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base: 0.8rem;
+$font-size-sm: 0.75rem;
+$font-size-xs: 0.7rem;
+$font-size-xxs: 0.65rem;
+$font-size-lg: 0.9rem;
+$font-size-xl: 1rem;
+$font-size-2xl: 1.8rem;
+$font-size-3xl: 2rem;
+
+$line-height-tight: 1.25;
+$line-height-normal: 1.4;
+$line-height-relaxed: 1.6;
+
+$letter-spacing-tight: -0.01em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.8px;
+$letter-spacing-wider: 1.2px;
+$letter-spacing-widest: 1.5px;
+
+// Spacing
+$space-1: 0.25rem;  // 4px
+$space-2: 0.5rem;   // 8px
+$space-3: 0.75rem;  // 12px
+$space-4: 1rem;     // 16px
+$space-5: 1.5rem;   // 24px
+$space-6: 2rem;     // 32px
+$space-7: 3rem;     // 48px
+$space-8: 4rem;     // 64px
+
+// Layout
+$container-max: 8.27in;  // A4 width
+$container-padding: 0.5in;
+$card-max-width: 400px;
+
+// Borders
+$border-width: 1px;
+$border-width-thick: 2px;
+$border-width-accent: 3px;
+$border-radius-sm: 4px;
+$border-radius: 8px;
+$border-radius-lg: 10px;
+
+// Shadows
+$shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);

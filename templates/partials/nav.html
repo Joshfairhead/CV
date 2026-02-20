@@ -1,0 +1,7 @@
+<nav class="nav">
+    <a href="{{ get_url(path='/') }}" class="nav__brand">Josh Fairhead</a>
+    <div class="nav__links">
+        <a href="{{ get_url(path='cv') }}" class="nav__link {% if current_path == 'cv/' %}nav__link--active{% endif %}">CV</a>
+        <a href="mailto:josh@joshafairhead.com" class="nav__link">Email</a>
+    </div>
+</nav>

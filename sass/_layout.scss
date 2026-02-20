@@ -1,0 +1,107 @@
+// =============================================================================
+// Layout
+// =============================================================================
+
+body {
+    background: $bg-primary;
+}
+
+.container {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: $space-4 $container-padding;
+}
+
+// Homepage centered card layout
+.page-home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-5;
+}
+
+.card {
+    background: $bg-card;
+    border: $border-width solid $border-card;
+    border-radius: $border-radius;
+    box-shadow: $shadow-subtle;
+    padding: $space-6 $space-7;
+    max-width: $card-max-width;
+    width: 100%;
+    text-align: center;
+}
+
+.card__name {
+    font-size: $font-size-3xl;
+    font-weight: 300;
+    letter-spacing: $letter-spacing-widest;
+    color: $text-primary;
+    margin-bottom: $space-3;
+}
+
+.card__tagline {
+    font-size: $font-size-lg;
+    color: $text-muted;
+    line-height: $line-height-normal;
+    margin-bottom: $space-5;
+}
+
+.card__divider {
+    height: $border-width;
+    background: $accent;
+    margin: $space-5 0;
+}
+
+.card__links {
+    display: flex;
+    justify-content: center;
+    gap: $space-4;
+}
+
+.card__link {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $accent;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.card__link-separator {
+    color: $text-muted;
+}
+
+// Section spacing
+.section {
+    margin-bottom: $space-5;
+}
+
+// Two column layout (for skills/education)
+.two-column {
+    display: flex;
+    gap: $space-6;
+
+    > * {
+        flex: 1;
+    }
+}
+
+// Responsive
+@media (max-width: 600px) {
+    .card {
+        padding: $space-5;
+    }
+
+    .card__name {
+        font-size: $font-size-2xl;
+    }
+
+    .two-column {
+        flex-direction: column;
+        gap: $space-5;
+    }
+}

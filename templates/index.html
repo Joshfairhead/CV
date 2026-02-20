@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body_class %}page-home{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h1 class="card__name">Josh Fairhead</h1>
+    <p class="card__tagline">
+        Programme Manager & Systems Thinker<br>
+        Governance · AI · Coordination
+    </p>
+    <div class="card__divider"></div>
+    <div class="card__links">
+        <a href="{{ get_url(path='cv') }}" class="card__link">CV</a>
+        {# TODO: Add About page
+        <span class="card__link-separator">·</span>
+        <a href="{{ get_url(path='about') }}" class="card__link">About</a>
+        #}
+    </div>
+</div>
+{% endblock %}

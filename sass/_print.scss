@@ -1,0 +1,116 @@
+// =============================================================================
+// Print Styles - Exact match to original HTML for 1-page CV
+// =============================================================================
+
+@media print {
+    // Preserve colors
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    // Body - exact match to original
+    body {
+        font-size: 0.75rem !important;
+        line-height: 1.2 !important;
+        padding: 0.2in 0.5in !important;
+    }
+
+    // Hide non-CV elements
+    .nav,
+    .page-home,
+    .card {
+        display: none !important;
+    }
+
+    // CV container
+    .cv {
+        padding: 0 !important;
+        max-width: none !important;
+    }
+
+    // Header - exact match
+    .cv__header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.3rem !important;
+    }
+
+    // Contact grid - exact match
+    .cv__contact {
+        display: grid !important;
+        grid-template-columns: max-content 1fr max-content 1fr !important;
+        grid-template-rows: auto auto !important;
+        font-size: 0.6rem !important;
+    }
+
+    // Sections
+    .cv__section {
+        margin-bottom: 0.4rem !important;
+    }
+
+    .cv__section-title {
+        margin-bottom: 0.3rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    // Experience
+    .cv__experience-item {
+        margin-bottom: 0.4rem !important;
+        padding-left: 0.8rem !important;
+    }
+
+    .cv__role-header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+    }
+
+    .cv__role-title {
+        font-size: 0.85rem !important;
+    }
+
+    .cv__company {
+        font-size: 0.75rem !important;
+    }
+
+    .cv__period {
+        font-size: 0.65rem !important;
+        padding: 0.08rem 0.3rem !important;
+    }
+
+    .cv__description {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+    }
+
+    // Two column - exact match
+    .cv__two-column {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2rem !important;
+    }
+
+    // Education & Skills
+    .cv__skills-list,
+    .cv__degrees {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+    }
+
+    // Name
+    .cv__name {
+        font-size: 1.6rem !important;
+    }
+
+    // Prevent page breaks
+    .cv__experience-item,
+    .cv__education-item,
+    .cv__skills-category {
+        break-inside: avoid;
+    }
+}
