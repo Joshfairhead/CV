@@ -4,10 +4,8 @@ set -e
 # Build the Zola site
 zola build
 
-# Install weasyprint for PDF generation
-pip install weasyprint
-
-# Generate PDF from the built CV page
-weasyprint public/cv/index.html public/josh-fairhead-cv.pdf
+# Install dependencies and generate PDF via headless Chrome
+npm install
+node generate-pdf.mjs
 
 echo "Build complete. PDF generated at public/josh-fairhead-cv.pdf"

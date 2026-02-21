@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node generate-pdf.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
