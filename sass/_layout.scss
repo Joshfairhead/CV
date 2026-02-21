@@ -38,6 +38,11 @@ body {
     letter-spacing: $letter-spacing-widest;
     color: $text-primary;
     margin-bottom: $space-3;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 .card__tagline {
