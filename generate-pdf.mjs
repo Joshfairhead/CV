@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 
@@ -6,7 +7,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const cvPath = resolve(__dirname, 'public/cv/index.html');
 const outputPath = resolve(__dirname, 'public/josh-fairhead-cv.pdf');
 
-const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+const browser = await puppeteer.launch({
+  args: chromium.args,
+  executablePath: await chromium.executablePath(),
+  headless: chromium.headless,
+});
 const page = await browser.newPage();
 await page.goto(`file://${cvPath}`, { waitUntil: 'networkidle0' });
 await page.pdf({
