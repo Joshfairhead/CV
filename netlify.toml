@@ -4,9 +4,11 @@
 
 [build.environment]
   ZOLA_VERSION = "0.20.0"
+  PUPPETEER_CACHE_DIR = "/opt/build/repo/.puppeteer-cache"
 
 [context.deploy-preview]
   command = "bash build.sh"
 
 [context.deploy-preview.environment]
   ZOLA_VERSION = "0.20.0"
+  PUPPETEER_CACHE_DIR = "/opt/build/repo/.puppeteer-cache"
